@@ -13,6 +13,30 @@ var blockerHeigth = 5;
 var blockerWidth = 50;
 var blockerX = (canvas.width-blockerWidth)/2;
 
+var leftPressed = false;
+var rightPressed = false;
+
+document.addEventListener("keydown", keyDownHandler);
+document.addEventListener("keyup", keyUpHandler);
+
+function keyDownHandler(e) {
+  if (e.keyCode == 37) {
+    leftPressed = true;
+  }
+  else if(e.keyCode == 39) {
+    rightPressed = true;
+  }
+}
+
+function keyUpHandler(e) {
+  if(e.keyCode == 39) {
+    leftPressed = false;
+  }
+  else if(e.keyCode == 37) {
+    rightPressed = false;
+  }
+}
+
 function createBall() {
   ctx.beginPath();
   ctx.arc(x, y, ballSize, 0, Math.PI*2);
