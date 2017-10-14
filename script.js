@@ -1,2 +1,2 @@
-var canvas = document.getElementById('');
-var ctx = canvas.msGetInputContext('2d');
+var canvas = document.getElementById('canvasBoard');
+var ctx = canvas.getContext('2d');
