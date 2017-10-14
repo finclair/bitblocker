@@ -59,11 +59,20 @@ function draw() {
   createBall();
   createBlocker();
 
-  if(y + dy < ballSize || y + dy > canvas.height-ballSize) {
+  if (y + dy < ballSize || y + dy > canvas.height-ballSize) {
     dy = -dy;
   }
   if (x + dx < ballSize || x + dx > canvas.width-ballSize) {
     dx = -dx;
+  }
+
+  if (leftPressed && blockerX > 0) {
+    blockerX = blockerX - 5;
+  }
+
+  if (rightPressed && blockerX < canvas.width-blockerWidth) {
+    blockerX = blockerX + 5;
+
   }
 
   x = x + dx;
