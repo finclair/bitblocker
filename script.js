@@ -9,6 +9,10 @@ var dx = 2;
 var dy = -2;
 var ballSize = 3;
 
+var blockerHeigth = 5;
+var blockerWidth = 50;
+var blockerX = canvas.width/2;
+
 function createBall() {
   ctx.beginPath();
   ctx.arc(x, y, ballSize, 0, Math.PI*2);
@@ -17,10 +21,19 @@ function createBall() {
   ctx.closePath();
 }
 
+function createBlocker() {
+  ctx.beginPath();
+  ctx.rect(blockerX, canvas.height-blockerHeigth-10, blockerWidth, blockerHeigth);
+  ctx.fillStyle = "red";
+  ctx.fill();
+  ctx.closePath();
+
+}
 
 function draw() {
   ctx.clearRect(0,0, canvas.width, canvas.height);
   createBall();
+  createBlocker();
 
   if(y + dy < ballSize || y + dy > canvas.height-ballSize) {
     dy = -dy;
