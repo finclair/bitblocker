@@ -1,7 +1,7 @@
 var canvas = document.getElementById('canvasBoard');
 var ctx = canvas.getContext('2d');
 
-setInterval(draw, 10);
+setInterval(draw, 20);
 
 var x = canvas.width/2;
 var y = canvas.height -30;
