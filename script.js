@@ -11,7 +11,7 @@ var ballSize = 3;
 
 var blockerHeigth = 5;
 var blockerWidth = 50;
-var blockerX = canvas.width/2;
+var blockerX = (canvas.width-blockerWidth)/2;
 
 function createBall() {
   ctx.beginPath();
