@@ -7,10 +7,11 @@ var x = canvas.width/2;
 var y = canvas.height -30;
 var dx = 2;
 var dy = -2;
+var ballSize = 3;
 
 function createBall() {
   ctx.beginPath();
-  ctx.arc(x, y, 3, 0, Math.PI*2);
+  ctx.arc(x, y, ballSize, 0, Math.PI*2);
   ctx.fillStyle = "green";
   ctx.fill();
   ctx.closePath();
