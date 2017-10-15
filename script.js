@@ -60,6 +60,11 @@ function draw() {
   createBlocker();
 
   if (y + dy < ballSize || y + dy > canvas.height-ballSize) {
+
+    if (y + dy > canvas.height-ballSize) {
+       alert("GAME OVER");
+       document.location.reload();
+    }
     dy = -dy;
   }
   if (x + dx < ballSize || x + dx > canvas.width-ballSize) {
@@ -71,8 +76,6 @@ function draw() {
   }
   else if (rightPressed && blockerX < canvas.width-blockerWidth) {
     blockerX = blockerX + 5;
-    
-
   }
 
   x = x + dx;
