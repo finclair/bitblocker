@@ -65,13 +65,13 @@ function draw() {
   if (x + dx < ballSize || x + dx > canvas.width-ballSize) {
     dx = -dx;
   }
-
+ 
   if (leftPressed && blockerX > 0) {
     blockerX = blockerX - 5;
   }
-
-  if (rightPressed && blockerX < canvas.width-blockerWidth) {
+  else if (rightPressed && blockerX < canvas.width-blockerWidth) {
     blockerX = blockerX + 5;
+    
 
   }
 
