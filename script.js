@@ -29,10 +29,10 @@ function keyDownHandler(e) {
 }
 
 function keyUpHandler(e) {
-  if(e.keyCode == 39) {
+  if(e.keyCode == 37) {
     leftPressed = false;
   }
-  else if(e.keyCode == 37) {
+  else if(e.keyCode == 39) {
     rightPressed = false;
   }
 }
