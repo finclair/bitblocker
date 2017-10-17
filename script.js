@@ -66,8 +66,8 @@ function draw() {
   if (y + dy < ballSize || y + dy > canvas.height-ballSize) {
 
     if (y + dy > canvas.height-ballSize) {
-      alert("GAME OVER");
-      document.location.reload();
+      //alert("GAME OVER");
+      //document.location.reload();
     }
     dy = -dy;
   }
