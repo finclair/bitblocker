@@ -16,6 +16,41 @@ var blockerX = (canvas.width-blockerWidth)/2;
 var leftPressed = false;
 var rightPressed = false;
 
+var brickRowCount = 3;
+var brickColumnCount = 5;
+var brickWidth = 50;
+var brickHeight = 10;
+var brickPadding = 10;
+brickOffsetTop = 2;
+brickOffsetLeft = 5;
+
+var bricks = [];
+for (r=0; r<brickRowCount; r++) {
+  bricks[r] = [];
+  for(c=0; c<brickColumnCount; c++) {
+  bricks[r][c] = {x: 0, y:0}
+  
+  }
+}
+
+function createBricks() {
+  for (r=0; r<brickRowCount; r++) {
+    for(c=0; c<brickColumnCount; c++) {
+      var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
+      var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
+      bricks[r][c].x = brickX;
+      bricks[r][c].y = brickY;
+      ctx.beginPath();
+      ctx.rect(brickX, brickY, brickWidth, brickHeight);
+      ctx.fillStyle = "#0095DD";
+      ctx.fill();
+      ctx.closePath();
+    }
+  }
+}
+
+
+
 document.addEventListener("keydown", keyDownHandler);
 document.addEventListener("keyup", keyUpHandler);
 
@@ -58,6 +93,7 @@ function draw() {
   ctx.clearRect(0,0, canvas.width, canvas.height);
   createBall();
   createBlocker();
+  createBricks();
 
   if(x + dx > blockerX  && x + dx < blockerX + blockerWidth && y + dy > canvas.height-20) {
     dy = -dy;
