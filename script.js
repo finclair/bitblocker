@@ -49,8 +49,6 @@ function createBricks() {
   }
 }
 
-
-
 document.addEventListener("keydown", keyDownHandler);
 document.addEventListener("keyup", keyUpHandler);
 
@@ -86,7 +84,6 @@ function createBlocker() {
   ctx.fillStyle = "red";
   ctx.fill();
   ctx.closePath();
-
 }
 
 function draw() {
